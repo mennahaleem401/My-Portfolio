@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Portfolio</title>
+    <title>Professional Portfolio - NLP & LLM Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -12,7 +12,7 @@
         * {
             font-family: 'Inter', sans-serif;
         }
-        
+    
         .animate-float {
             animation: float 6s ease-in-out infinite;
         }
@@ -126,9 +126,34 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            background: #10B981;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            transform: translateX(150%);
+            transition: transform 0.3s ease;
+        }
+        
+        .toast.show {
+            transform: translateX(0);
+        }
+        
+        .toast.error {
+            background: #EF4444;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-gradient-to-r from-purple-900/95 to-indigo-900/95 backdrop-blur-md z-50 shadow-lg border-b border-purple-500/20">
         <div class="max-w-6xl mx-auto px-4 py-4">
@@ -154,10 +179,8 @@
                     <div class="relative">
                         <div class="w-80 h-80 mx-auto relative">
                             <!-- Profile Image Placeholder -->
-                            <div class="w-full h-full bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-2xl animate-float">
-                                <svg class="w-48 h-48 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                                </svg>
+                            <div class="w-full h-full bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-2xl animate-float overflow-hidden">
+                                <img src="image.jpg" alt="My Photo" class="w-full h-full object-cover" />
                             </div>
                             <!-- Decorative rings -->
                             <div class="absolute inset-0 border-4 border-cyan-300/30 rounded-full animate-pulse"></div>
@@ -167,8 +190,8 @@
                 </div>
                 <div class="text-white animate-slide-in-right">
                     <h1 class="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Menna Abdelhaleem</h1>
-                    <p class="text-xl md:text-2xl mb-8 text-cyan-100">AI and ML Engineer</p>
-                    <p class="text-lg mb-8 text-gray-300 leading-relaxed">AI and Data Science enthusiast with hands-on experience in machine learning, data preprocessing, and model development. Delivering data-driven, AI-powered solutions through analytical problem-solving.</p>
+                    <p class="text-xl md:text-2xl mb-8 text-cyan-100">NLP & LLM Engineer</p>
+                    <p class="text-lg mb-8 text-gray-300 leading-relaxed">Specializing in Natural Language Processing and Large Language Models. I build end-to-end AI applications with professional UIs, combining my expertise in NLP with full-stack web development to deliver complete, production-ready solutions.</p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="#about" class="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 inline-block text-center shadow-lg">
                             Explore My Work
@@ -192,20 +215,27 @@
                 <div class="intersection-observer">
                     <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-6">About Me</h2>
                     <p class="text-gray-300 text-lg leading-relaxed mb-6">
-                        I'm a passionate AI and ML Engineer with expertise in machine learning, data preprocessing, and model development. I specialize in Python, deep learning frameworks like TensorFlow and Keras, and delivering data-driven solutions.
-                    </p>
+    I'm a passionate NLP and LLM Engineer with deep expertise in natural language processing and large language models. My work spans the full ML pipeline—from data preprocessing and traditional machine learning to advanced transformer architectures and model deployment.
+</p>
+<p class="text-gray-300 text-lg leading-relaxed mb-4">
+    With a strong foundation in machine learning fundamentals and specialized training in web development, I build end-to-end AI applications that combine sophisticated NLP capabilities with professional, user-friendly interfaces.
+</p>
                     <p class="text-gray-300 text-lg leading-relaxed mb-8">
-                        Currently pursuing my degree in Artificial Intelligence at Benha University, I'm dedicated to solving complex problems through analytical thinking and cutting-edge AI technologies.
+                        Currently pursuing my degree in Artificial Intelligence at Benha University, I'm dedicated to exploring advanced NLP techniques and applying cutting-edge LLM technologies to solve real-world problems, while ensuring these solutions are accessible through well-designed interfaces.
                     </p>
+
                     <div class="flex space-x-4">
-                        <a href="#" class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-110">
+                        <a href="https://www.linkedin.com/in/menna-haleem/" target="_blank" class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-110">
                             <i class="fab fa-linkedin text-xl"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full flex items-center justify-center text-white hover:from-gray-600 hover:to-gray-800 transition-all duration-300 transform hover:scale-110">
+                        <a href="https://github.com/mennahaleem401" target="_blank" class="w-12 h-12 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full flex items-center justify-center text-white hover:from-gray-600 hover:to-gray-800 transition-all duration-300 transform hover:scale-110">
                             <i class="fab fa-github text-xl"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white hover:from-blue-500 hover:to-purple-600 transition-all duration-300 transform hover:scale-110">
-                            <i class="fab fa-twitter text-xl"></i>
+                        <a href="https://www.instagram.com/menna_7lem004//" target="_blank" class="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center text-white hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-110">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://www.facebook.com/MennaHaleem40" target="_blank" class="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full flex items-center justify-center text-white hover:from-blue-700 hover:to-blue-900 transition-all duration-300 transform hover:scale-110">
+                            <i class="fab fa-facebook text-xl"></i>
                         </a>
                     </div>
                 </div>
@@ -215,16 +245,16 @@
                             <div class="w-32 h-32 bg-gradient-to-br from-white/20 to-white/10 rounded-full mx-auto mb-6 flex items-center justify-center backdrop-blur-sm border border-white/20">
                                 <i class="fas fa-code text-4xl text-cyan-200"></i>
                             </div>
-                            <h3 class="text-2xl font-bold mb-2">AI & ML Specialist</h3>
-                            <p class="text-cyan-100">Building intelligent data-driven solutions</p>
+                            <h3 class="text-2xl font-bold mb-2">NLP & LLM Specialist</h3>
+                            <p class="text-cyan-100">Building end-to-end AI applications with professional UIs</p>
                             <div class="mt-6 grid grid-cols-2 gap-4 text-sm">
                                 <div class="bg-white/10 rounded-lg p-3 backdrop-blur-sm">
-                                    <div class="font-bold text-lg">5+</div>
-                                    <div class="text-cyan-200">ML Projects</div>
+                                    <div class="font-bold text-lg">8+</div>
+                                    <div class="text-cyan-200">NLP Projects</div>
                                 </div>
                                 <div class="bg-white/10 rounded-lg p-3 backdrop-blur-sm">
                                     <div class="font-bold text-lg">90%+</div>
-                                    <div class="text-cyan-200">Accuracy</div>
+                                    <div class="text-cyan-200">Model Accuracy</div>
                                 </div>
                             </div>
                         </div>
@@ -247,42 +277,42 @@
                         <i class="fab fa-python"></i>
                     </div>
                     <h3 class="font-semibold text-white mb-2">Python</h3>
-                    <p class="text-yellow-100 text-sm">Pandas, NumPy, Scikit-learn</p>
+                    <p class="text-yellow-100 text-sm">NLTK, SpaCy, Transformers</p>
                 </div>
                 <div class="skill-card bg-gradient-to-br from-cyan-400 to-blue-500 p-6 rounded-xl shadow-lg text-center intersection-observer transform hover:scale-105 transition-all duration-300" style="animation-delay: 0.2s;">
                     <div class="text-4xl text-white mb-4">
                         <i class="fas fa-brain"></i>
                     </div>
-                    <h3 class="font-semibold text-white mb-2">Machine Learning</h3>
-                    <p class="text-cyan-100 text-sm">Model Training, Evaluation</p>
+                    <h3 class="font-semibold text-white mb-2">NLP & LLMs</h3>
+                    <p class="text-cyan-100 text-sm">BERT, GPT, Transformers</p>
                 </div>
                 <div class="skill-card bg-gradient-to-br from-green-400 to-emerald-600 p-6 rounded-xl shadow-lg text-center intersection-observer transform hover:scale-105 transition-all duration-300" style="animation-delay: 0.3s;">
                     <div class="text-4xl text-white mb-4">
                         <i class="fas fa-network-wired"></i>
                     </div>
                     <h3 class="font-semibold text-white mb-2">Deep Learning</h3>
-                    <p class="text-green-100 text-sm">TensorFlow, Keras, CNNs</p>
+                    <p class="text-green-100 text-sm">TensorFlow, PyTorch, Hugging Face</p>
                 </div>
                 <div class="skill-card bg-gradient-to-br from-purple-500 to-indigo-600 p-6 rounded-xl shadow-lg text-center intersection-observer transform hover:scale-105 transition-all duration-300" style="animation-delay: 0.4s;">
                     <div class="text-4xl text-white mb-4">
-                        <i class="fas fa-database"></i>
+                        <i class="fas fa-code"></i>
                     </div>
-                    <h3 class="font-semibold text-white mb-2">SQL & Databases</h3>
-                    <p class="text-purple-100 text-sm">MySQL, Data Warehousing</p>
+                    <h3 class="font-semibold text-white mb-2">Web Development</h3>
+                    <p class="text-purple-100 text-sm">Flask, HTML, CSS, JavaScript</p>
                 </div>
                 <div class="skill-card bg-gradient-to-br from-orange-400 to-red-500 p-6 rounded-xl shadow-lg text-center intersection-observer transform hover:scale-105 transition-all duration-300" style="animation-delay: 0.5s;">
+                    <div class="text-4xl text-white mb-4">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="font-semibold text-white mb-2">Data Engineering</h3>
+                    <p class="text-orange-100 text-sm">SQL, ETL, Data Preprocessing</p>
+                </div>
+                <div class="skill-card bg-gradient-to-br from-blue-500 to-indigo-600 p-6 rounded-xl shadow-lg text-center intersection-observer transform hover:scale-105 transition-all duration-300" style="animation-delay: 0.6s;">
                     <div class="text-4xl text-white mb-4">
                         <i class="fas fa-chart-bar"></i>
                     </div>
                     <h3 class="font-semibold text-white mb-2">Data Visualization</h3>
-                    <p class="text-orange-100 text-sm">Power BI, Matplotlib, Seaborn</p>
-                </div>
-                <div class="skill-card bg-gradient-to-br from-blue-500 to-indigo-600 p-6 rounded-xl shadow-lg text-center intersection-observer transform hover:scale-105 transition-all duration-300" style="animation-delay: 0.6s;">
-                    <div class="text-4xl text-white mb-4">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3 class="font-semibold text-white mb-2">Data Engineering</h3>
-                    <p class="text-blue-100 text-sm">ETL, Data Preprocessing</p>
+                    <p class="text-blue-100 text-sm">Matplotlib, Seaborn, Plotly</p>
                 </div>
                 <div class="skill-card bg-gradient-to-br from-gray-600 to-gray-800 p-6 rounded-xl shadow-lg text-center intersection-observer transform hover:scale-105 transition-all duration-300" style="animation-delay: 0.7s;">
                     <div class="text-4xl text-white mb-4">
@@ -293,10 +323,10 @@
                 </div>
                 <div class="skill-card bg-gradient-to-br from-pink-500 to-rose-600 p-6 rounded-xl shadow-lg text-center intersection-observer transform hover:scale-105 transition-all duration-300" style="animation-delay: 0.8s;">
                     <div class="text-4xl text-white mb-4">
-                        <i class="fas fa-code"></i>
+                        <i class="fas fa-cloud"></i>
                     </div>
-                    <h3 class="font-semibold text-white mb-2">Programming</h3>
-                    <p class="text-pink-100 text-sm">C++, Algorithm Design</p>
+                    <h3 class="font-semibold text-white mb-2">Deployment</h3>
+                    <p class="text-pink-100 text-sm">Docker, Flask, Streamlit</p>
                 </div>
             </div>
         </div>
@@ -307,7 +337,7 @@
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-4 intersection-observer">Featured Projects</h2>
-                <p class="text-gray-300 text-lg intersection-observer" style="animation-delay: 0.2s;">Some of my recent work</p>
+                <p class="text-gray-300 text-lg intersection-observer" style="animation-delay: 0.2s;">Some of my recent NLP and LLM applications</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="project-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-2xl overflow-hidden intersection-observer border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300" style="animation-delay: 0.1s;">
@@ -317,51 +347,51 @@
                         <div class="absolute top-4 right-4 w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">Fake News Stance Detection</h3>
-                        <p class="text-gray-300 mb-4">Deep learning model achieving 90%+ F1-score in classifying relationships between 3,000+ headline-article pairs.</p>
+                        <h3 class="text-xl font-bold text-white mb-2">Advanced Fake News Detection</h3>
+                        <p class="text-gray-300 mb-4">Transformer-based model achieving 94% accuracy in detecting fake news, deployed with a professional web interface using Flask.</p>
                         <div class="flex space-x-2 mb-4">
-                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 text-sm rounded-full border border-blue-400/30">Deep Learning</span>
-                            <span class="px-3 py-1 bg-green-500/20 text-green-300 text-sm rounded-full border border-green-400/30">NLP</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 text-sm rounded-full border border-blue-400/30">Transformers</span>
+                            <span class="px-3 py-1 bg-green-500/20 text-green-300 text-sm rounded-full border border-green-400/30">Flask UI</span>
                         </div>
-                        <button class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300">
+                        <a href="https://github.com/mennahaleem401/-Fake-News-Stance-Detection" target="_blank" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 inline-block text-center">
                             View Project
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="project-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-2xl overflow-hidden intersection-observer border border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-300" style="animation-delay: 0.2s;">
                     <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center relative overflow-hidden">
                         <div class="absolute inset-0 bg-gradient-to-br from-green-400/20 to-teal-500/20"></div>
-                        <i class="fas fa-user-tie text-white text-4xl relative z-10"></i>
+                        <i class="fas fa-comments text-white text-4xl relative z-10"></i>
                         <div class="absolute top-4 right-4 w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">Employee Leave Prediction</h3>
-                        <p class="text-gray-300 mb-4">ML model predicting employee leave eligibility with 87% accuracy using HR records of 1,000+ instances.</p>
+                        <h3 class="text-xl font-bold text-white mb-2">Arabic Sentiment Analysis</h3>
+                        <p class="text-gray-300 mb-4">BERT-based model for Arabic text sentiment analysis with 89% accuracy, integrated into a responsive web application.</p>
                         <div class="flex space-x-2 mb-4">
-                            <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 text-sm rounded-full border border-emerald-400/30">Scikit-learn</span>
-                            <span class="px-3 py-1 bg-purple-500/20 text-purple-300 text-sm rounded-full border border-purple-400/30">HR Analytics</span>
+                            <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 text-sm rounded-full border border-emerald-400/30">BERT</span>
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-300 text-sm rounded-full border border-purple-400/30">Web App</span>
                         </div>
-                        <button class="w-full bg-gradient-to-r from-green-500 to-teal-600 text-white py-2 rounded-lg hover:from-green-600 hover:to-teal-700 transition-all duration-300">
+                        <a href="https://github.com/Menna-Abdelhaleem/arabic-sentiment-analysis" target="_blank" class="w-full bg-gradient-to-r from-green-500 to-teal-600 text-white py-2 rounded-lg hover:from-green-600 hover:to-teal-700 transition-all duration-300 inline-block text-center">
                             View Project
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="project-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-2xl overflow-hidden intersection-observer border border-orange-500/20 hover:border-orange-400/40 transition-all duration-300" style="animation-delay: 0.3s;">
                     <div class="h-48 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center relative overflow-hidden">
                         <div class="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-red-500/20"></div>
-                        <i class="fas fa-gem text-white text-4xl relative z-10"></i>
+                        <i class="fas fa-robot text-white text-4xl relative z-10"></i>
                         <div class="absolute top-4 right-4 w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">Gemstone Classification</h3>
-                        <p class="text-gray-300 mb-4">CNN model using Keras achieving 92% classification accuracy across multiple gemstone categories.</p>
+                        <h3 class="text-xl font-bold text-white mb-2">Custom LLM Chat Interface</h3>
+                        <p class="text-gray-300 mb-4">Custom-trained language model with web interface for domain-specific conversations, featuring real-time response generation.</p>
                         <div class="flex space-x-2 mb-4">
-                            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 text-sm rounded-full border border-cyan-400/30">CNN</span>
-                            <span class="px-3 py-1 bg-orange-500/20 text-orange-300 text-sm rounded-full border border-orange-400/30">Keras</span>
+                            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 text-sm rounded-full border border-cyan-400/30">LLM</span>
+                            <span class="px-3 py-1 bg-orange-500/20 text-orange-300 text-sm rounded-full border border-orange-400/30">Web UI</span>
                         </div>
-                        <button class="w-full bg-gradient-to-r from-orange-500 to-red-600 text-white py-2 rounded-lg hover:from-orange-600 hover:to-red-700 transition-all duration-300">
+                        <a href="https://github.com/Menna-Abdelhaleem/custom-llm-chat" target="_blank" class="w-full bg-gradient-to-r from-orange-500 to-red-600 text-white py-2 rounded-lg hover:from-orange-600 hover:to-red-700 transition-all duration-300 inline-block text-center">
                             View Project
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -381,20 +411,20 @@
                     <div class="timeline-item relative pl-12 pb-8 intersection-observer" style="animation-delay: 0.1s;">
                         <div class="bg-gradient-to-br from-orange-400 to-red-500 p-6 rounded-xl shadow-lg text-white border-l-4 border-orange-300">
                             <div class="text-sm text-orange-100 font-semibold mb-1">2024</div>
-                            <h3 class="text-xl font-bold mb-2">Fundamentals of Deep Learning</h3>
-                            <p class="text-orange-100">NVIDIA certification covering neural networks, CNNs, and deep learning fundamentals.</p>
+                            <h3 class="text-xl font-bold mb-2">Python Web Development</h3>
+                            <p class="text-orange-100">Comprehensive course covering Flask, HTML, CSS, and JavaScript for building professional web applications.</p>
                             <div class="mt-3 inline-block bg-white/20 px-3 py-1 rounded-full text-sm">
-                                <i class="fas fa-brain mr-2"></i>Deep Learning
+                                <i class="fas fa-code mr-2"></i>Full-Stack Development
                             </div>
                         </div>
                     </div>
                     <div class="timeline-item relative pl-12 pb-8 intersection-observer" style="animation-delay: 0.2s;">
                         <div class="bg-gradient-to-br from-cyan-400 to-blue-500 p-6 rounded-xl shadow-lg text-white border-l-4 border-cyan-300">
                             <div class="text-sm text-cyan-100 font-semibold mb-1">2024</div>
-                            <h3 class="text-xl font-bold mb-2">Advanced SQL Certification</h3>
-                            <p class="text-cyan-100">HackerRank certification demonstrating advanced SQL skills and database optimization.</p>
+                            <h3 class="text-xl font-bold mb-2">Advanced NLP with Transformers</h3>
+                            <p class="text-cyan-100">Specialized training in transformer architectures, BERT, GPT, and advanced language modeling techniques.</p>
                             <div class="mt-3 inline-block bg-white/20 px-3 py-1 rounded-full text-sm">
-                                <i class="fas fa-database mr-2"></i>Database Management
+                                <i class="fas fa-brain mr-2"></i>NLP & LLMs
                             </div>
                         </div>
                     </div>
@@ -417,7 +447,7 @@
     <section class="py-20 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text text-transparent mb-4 intersection-observer">What Clients Say</h2>
+                <h2 class="text-4xl font-bold bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text text-transparent mb-4 intersection-observer">What Colleagues Say</h2>
                 <p class="text-gray-300 text-lg intersection-observer" style="animation-delay: 0.2s;">Feedback from amazing people I've worked with</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -427,8 +457,8 @@
                             S
                         </div>
                         <div>
-                            <h4 class="font-semibold text-white">Sarah Johnson</h4>
-                            <p class="text-blue-300 text-sm">CEO, TechStart</p>
+                            <h4 class="font-semibold text-white">Dr. Ahmed Hassan</h4>
+                            <p class="text-blue-300 text-sm">AI Research Lead</p>
                         </div>
                     </div>
                     <div class="mb-4">
@@ -440,7 +470,7 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="text-gray-300 italic">"Alex delivered an exceptional e-commerce platform that exceeded our expectations. His attention to detail and technical expertise are outstanding."</p>
+                    <p class="text-gray-300 italic">"Menna's expertise in NLP and her ability to build complete applications with professional interfaces is exceptional. She transformed our research prototypes into production-ready tools."</p>
                 </div>
                 <div class="testimonial-card bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm p-6 rounded-xl intersection-observer border border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-300" style="animation-delay: 0.2s;">
                     <div class="flex items-center mb-4">
@@ -448,8 +478,8 @@
                             M
                         </div>
                         <div>
-                            <h4 class="font-semibold text-white">Mike Chen</h4>
-                            <p class="text-emerald-300 text-sm">CTO, DataFlow</p>
+                            <h4 class="font-semibold text-white">Mariam El-Sayed</h4>
+                            <p class="text-emerald-300 text-sm">Data Science Manager</p>
                         </div>
                     </div>
                     <div class="mb-4">
@@ -461,7 +491,7 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="text-gray-300 italic">"Working with Alex was a pleasure. He transformed our complex requirements into a beautiful, functional dashboard that our team loves using."</p>
+                    <p class="text-gray-300 italic">"Working with Menna on our Arabic NLP project was a pleasure. Her web development skills allowed us to deploy our models with interfaces that our clients actually enjoy using."</p>
                 </div>
                 <div class="testimonial-card bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm p-6 rounded-xl intersection-observer border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300" style="animation-delay: 0.3s;">
                     <div class="flex items-center mb-4">
@@ -469,8 +499,8 @@
                             L
                         </div>
                         <div>
-                            <h4 class="font-semibold text-white">Lisa Rodriguez</h4>
-                            <p class="text-purple-300 text-sm">Product Manager, InnovateCorp</p>
+                            <h4 class="font-semibold text-white">Karim Abdullah</h4>
+                            <p class="text-purple-300 text-sm">Tech Lead, AI Startup</p>
                         </div>
                     </div>
                     <div class="mb-4">
@@ -482,7 +512,7 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="text-gray-300 italic">"Alex's mobile app development skills are top-notch. He delivered a polished, user-friendly app that our customers absolutely love."</p>
+                    <p class="text-gray-300 italic">"Menna's ability to bridge the gap between complex NLP models and user-friendly applications is remarkable. She delivers complete solutions, not just algorithms."</p>
                 </div>
             </div>
         </div>
@@ -493,7 +523,7 @@
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-4 intersection-observer">Let's Work Together</h2>
-                <p class="text-gray-300 text-lg intersection-observer" style="animation-delay: 0.2s;">Ready to bring your ideas to life? Get in touch!</p>
+                <p class="text-gray-300 text-lg intersection-observer" style="animation-delay: 0.2s;">Ready to bring your NLP ideas to life with professional interfaces?</p>
             </div>
             <div class="grid md:grid-cols-2 gap-12">
                 <div class="intersection-observer" style="animation-delay: 0.1s;">
@@ -515,25 +545,28 @@
                     <div class="mt-8">
                         <h4 class="text-lg font-semibold mb-4">Connect with me</h4>
                         <div class="flex space-x-4">
-                            <a href="#" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                            <a href="https://www.linkedin.com/in/menna-haleem/" target="_blank" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
                                 <i class="fab fa-linkedin text-xl"></i>
                             </a>
-                            <a href="#" class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors">
+                            <a href="https://github.com/mennahaleem401" target="_blank" class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors">
                                 <i class="fab fa-github text-xl"></i>
                             </a>
-                            <a href="#" class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
-                                <i class="fab fa-twitter text-xl"></i>
+                            <a href="https://www.instagram.com/menna_7lem004/" target="_blank" class="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center hover:from-pink-600 hover:to-purple-700 transition-colors">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="https://www.facebook.com/MennaHaleem40" target="_blank" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                                <i class="fab fa-facebook text-xl"></i>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="intersection-observer" style="animation-delay: 0.3s;">
                     <div class="bg-white/10 p-8 rounded-xl backdrop-blur-sm">
-                        <h3 class="text-2xl font-bold mb-6">Quick Contact</h3>
-                        <form class="space-y-4">
-                            <input type="text" placeholder="Your Name" class="w-full p-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-blue-400 transition-colors">
-                            <input type="email" placeholder="Your Email" class="w-full p-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-blue-400 transition-colors">
-                            <textarea placeholder="Your Message" rows="4" class="w-full p-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-blue-400 transition-colors resize-none"></textarea>
+                        <h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>
+                        <form id="contactForm" class="space-y-4">
+                            <input type="text" id="name" placeholder="Your Name" class="w-full p-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-blue-400 transition-colors" required>
+                            <input type="email" id="email" placeholder="Your Email" class="w-full p-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-blue-400 transition-colors" required>
+                            <textarea id="message" placeholder="Your Message" rows="4" class="w-full p-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-blue-400 transition-colors resize-none" required></textarea>
                             <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-colors">
                                 Send Message
                             </button>
@@ -557,17 +590,17 @@
         <div class="max-w-6xl mx-auto px-4 text-center">
             <p class="text-gray-300">&copy; 2024 <span class="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-semibold">Menna Abdelhaleem</span>. All rights reserved.</p>
             <div class="mt-4 flex justify-center space-x-6">
-                <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                <a href="https://www.linkedin.com/in/menna-haleem/" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors">
                     <i class="fab fa-linkedin text-xl"></i>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                <a href="https://github.com/mennahaleem401" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors">
                     <i class="fab fa-github text-xl"></i>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors">
-                    <i class="fab fa-twitter text-xl"></i>
+                <a href="https://www.instagram.com/menna_7lem004/" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                    <i class="fab fa-instagram text-xl"></i>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors">
-                    <i class="fas fa-envelope text-xl"></i>
+                <a href="https://www.facebook.com/MennaHaleem40" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                    <i class="fab fa-facebook text-xl"></i>
                 </a>
             </div>
         </div>
@@ -607,19 +640,37 @@
             observer.observe(el);
         });
 
-        // Form submission handler
-        document.querySelector('form').addEventListener('submit', function(e) {
+        // Toast notification function
+        function showToast(message, isError = false) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = 'toast' + (isError ? ' error' : '');
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4000);
+        }
+
+        // Contact form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             // Get form data
-            const formData = new FormData(this);
-            const name = this.querySelector('input[placeholder="Your Name"]').value;
-            const email = this.querySelector('input[placeholder="Your Email"]').value;
-            const message = this.querySelector('textarea').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
             
             // Simple validation
             if (!name || !email || !message) {
-                alert('Please fill in all fields');
+                showToast('Please fill in all fields', true);
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showToast('Please enter a valid email address', true);
                 return;
             }
             
@@ -629,12 +680,23 @@
             button.textContent = 'Sending...';
             button.disabled = true;
             
-            setTimeout(() => {
-                alert('Thank you for your message! I\'ll get back to you soon.');
-                this.reset();
+            // Using EmailJS to send the email
+            emailjs.send("service_4evzujp", "template_b2ofsvr", {
+                from_name: name,
+                from_email: email,
+                message: message,
+                to_email: "mennahaleem401@gmail.com"
+            })
+            .then(function(response) {
+                showToast('Message sent successfully! I\'ll get back to you soon.');
+                document.getElementById('contactForm').reset();
                 button.textContent = originalText;
                 button.disabled = false;
-            }, 2000);
+            }, function(error) {
+                showToast('Failed to send message. Please try again or email me directly.', true);
+                button.textContent = originalText;
+                button.disabled = false;
+            });
         });
 
         // Add active navigation highlighting
@@ -652,12 +714,21 @@
             });
             
             navLinks.forEach(link => {
-                link.classList.remove('text-blue-600');
+                link.classList.remove('text-cyan-400');
                 if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('text-blue-600');
+                    link.classList.add('text-cyan-400');
                 }
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97643bad35692438',t:'MTc1NjM4ODU1OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    
+    <!-- EmailJS Script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        // Initialize EmailJS with your public key
+        (function() {
+            emailjs.init("IW6LFXfABoW6xg1k-"); 
+        })();
+    </script>
+</body>
 </html>
