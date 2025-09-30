@@ -340,30 +340,30 @@
             <p class="text-gray-300 text-lg intersection-observer" style="animation-delay: 0.2s;">Some of my recent NLP and LLM applications</p>
         </div>
         
-        <!-- Projects Container with Stacked Layout -->
-        <div class="relative max-w-2xl mx-auto">
-            <!-- Mental Health Chatbot Project (Back) -->
-            <div class="project-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-2xl overflow-hidden intersection-observer border border-orange-500/20 hover:border-orange-400/40 transition-all duration-300 absolute w-full" style="animation-delay: 0.1s; transform: translateY(30px) scale(0.95); z-index: 1; opacity: 0.8;">
+        <!-- Projects Container with Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Fake News Stance Detection Project -->
+            <div class="project-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-2xl overflow-hidden intersection-observer border border-orange-500/20 hover:border-orange-400/40 transition-all duration-300" style="animation-delay: 0.2s;">
                 <div class="h-48 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center relative overflow-hidden">
                     <div class="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-red-500/20"></div>
-                    <i class="fas fa-heart text-white text-4xl relative z-10"></i>
+                    <i class="fas fa-search text-white text-4xl relative z-10"></i>
                     <div class="absolute top-4 right-4 w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold text-white mb-2">🤗 Comfort Zone - Mental Health Chatbot</h3>
-                    <p class="text-gray-300 mb-4">AI-powered mental health assistant using RAG with FastAPI backend and Streamlit frontend for empathetic, informed support.</p>
+                    <h3 class="text-xl font-bold text-white mb-2">Fake News Stance Detection</h3>
+                    <p class="text-gray-300 mb-4">Advanced stance detection model using FNC-1 dataset to classify relationships between headlines and article bodies.</p>
                     <div class="flex space-x-2 mb-4">
-                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 text-sm rounded-full border border-cyan-400/30">RAG</span>
-                        <span class="px-3 py-1 bg-orange-500/20 text-orange-300 text-sm rounded-full border border-orange-400/30">Web UI</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 text-sm rounded-full border border-cyan-400/30">NLP</span>
+                        <span class="px-3 py-1 bg-orange-500/20 text-orange-300 text-sm rounded-full border border-orange-400/30">Dataset</span>
                     </div>
-                    <a href="https://github.com/mennahaleem401/NTI-NLP-and-LLMS-Course/tree/main/Final%20Project" target="_blank" class="w-full bg-gradient-to-r from-orange-500 to-red-600 text-white py-2 rounded-lg hover:from-orange-600 hover:to-red-700 transition-all duration-300 inline-block text-center">
+                    <a href="https://github.com/mennahaleem401/-Fake-News-Stance-Detection" target="_blank" class="w-full bg-gradient-to-r from-orange-500 to-red-600 text-white py-2 rounded-lg hover:from-orange-600 hover:to-red-700 transition-all duration-300 inline-block text-center">
                         View Project
                     </a>
                 </div>
             </div>
 
-            <!-- Arabic Sentiment Analysis Project (Middle) -->
-            <div class="project-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-2xl overflow-hidden intersection-observer border border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-300 absolute w-full" style="animation-delay: 0.2s; transform: translateY(15px) scale(0.98); z-index: 2; opacity: 0.9;">
+            <!-- Arabic Sentiment Analysis Project -->
+            <div class="project-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-2xl overflow-hidden intersection-observer border border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-300" style="animation-delay: 0.2s;">
                 <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center relative overflow-hidden">
                     <div class="absolute inset-0 bg-gradient-to-br from-green-400/20 to-teal-500/20"></div>
                     <i class="fas fa-comments text-white text-4xl relative z-10"></i>
@@ -382,32 +382,28 @@
                 </div>
             </div>
 
-            <!-- Fake News Stance Detection Project (Front) -->
-            <div class="project-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-2xl overflow-hidden intersection-observer border border-orange-500/20 hover:border-orange-400/40 transition-all duration-300 relative w-full" style="animation-delay: 0.2s; z-index: 3;">
+            <!-- Mental Health Chatbot Project -->
+            <div class="project-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-2xl overflow-hidden intersection-observer border border-orange-500/20 hover:border-orange-400/40 transition-all duration-300" style="animation-delay: 0.1s;">
                 <div class="h-48 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center relative overflow-hidden">
                     <div class="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-red-500/20"></div>
-                    <i class="fas fa-search text-white text-4xl relative z-10"></i>
+                    <i class="fas fa-heart text-white text-4xl relative z-10"></i>
                     <div class="absolute top-4 right-4 w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold text-white mb-2">Fake News Stance Detection</h3>
-                    <p class="text-gray-300 mb-4">Advanced stance detection model using FNC-1 dataset to classify relationships between headlines and article bodies.</p>
+                    <h3 class="text-xl font-bold text-white mb-2">🤗 Comfort Zone - Mental Health Chatbot</h3>
+                    <p class="text-gray-300 mb-4">AI-powered mental health assistant using RAG with FastAPI backend and Streamlit frontend for empathetic, informed support.</p>
                     <div class="flex space-x-2 mb-4">
-                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 text-sm rounded-full border border-cyan-400/30">NLP</span>
-                        <span class="px-3 py-1 bg-orange-500/20 text-orange-300 text-sm rounded-full border border-orange-400/30">Dataset</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 text-sm rounded-full border border-cyan-400/30">RAG</span>
+                        <span class="px-3 py-1 bg-orange-500/20 text-orange-300 text-sm rounded-full border border-orange-400/30">Web UI</span>
                     </div>
-                    <a href="https://github.com/mennahaleem401/-Fake-News-Stance-Detection" target="_blank" class="w-full bg-gradient-to-r from-orange-500 to-red-600 text-white py-2 rounded-lg hover:from-orange-600 hover:to-red-700 transition-all duration-300 inline-block text-center">
+                    <a href="https://github.com/mennahaleem401/NTI-NLP-and-LLMS-Course/tree/main/Final%20Project" target="_blank" class="w-full bg-gradient-to-r from-orange-500 to-red-600 text-white py-2 rounded-lg hover:from-orange-600 hover:to-red-700 transition-all duration-300 inline-block text-center">
                         View Project
                     </a>
                 </div>
             </div>
         </div>
-        
-        <!-- Spacer to account for the stacked layout height -->
-        <div class="h-64"></div>
     </div>
 </section>
-
     <!-- Education -->
     <section class="py-20 bg-gradient-to-br from-gray-900 via-slate-900 to-indigo-900">
         <div class="max-w-6xl mx-auto px-4">
